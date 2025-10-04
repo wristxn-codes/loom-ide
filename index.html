@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loom IDE - AI-Powered Python Learning Platform</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .header .tagline {
+            font-size: 1.3em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin: 20px 5px 0 5px;
+            font-size: 0.9em;
+            backdrop-filter: blur(10px);
+        }
+        
+        .content {
+            padding: 50px 40px;
+        }
+        
+        .acquisition-notice {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .acquisition-notice h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        
+        .acquisition-notice p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        .acquisition-notice .price {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+        
+        section {
+            margin-bottom: 40px;
+        }
+        
+        h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #764ba2;
+            font-size: 1.5em;
+            margin: 25px 0 15px 0;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        ul li {
+            padding: 12px 0 12px 30px;
+            position: relative;
+            font-size: 1.1em;
+        }
+        
+        ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.3em;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid #667eea30;
+        }
+        
+        .stat-card .number {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        
+        .stat-card .label {
+            color: #666;
+            font-size: 0.95em;
+        }
+        
+        .cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .cta h2 {
+            color: white;
+            border: none;
+            margin-bottom: 20px;
+        }
+        
+        .cta a {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2em;
+            margin: 10px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .cta a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            .header .tagline {
+                font-size: 1em;
+            }
+            .content {
+                padding: 30px 20px;
+            }
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Loom IDE</h1>
+            <p class="tagline">AI-Powered Python Development Environment with Revolutionary Learning System</p>
+            <div>
+                <span class="badge">97K+ Lines of Code</span>
+                <span class="badge">131 Modules</span>
+                <span class="badge">Enterprise-Ready</span>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="acquisition-notice">
+                <h2>🎯 Available for Acquisition</h2>
+                <p>Production-ready codebase with patent-worthy learning analytics</p>
+                <div class="price">$700,000</div>
+                <p style="font-size: 0.95em; opacity: 0.9;">(Negotiable for strategic buyers)</p>
+            </div>
+            
+            <section>
+                <h2>📊 Technical Overview</h2>
+                <div class="stats">
+                    <div class="stat-card">
+                        <div class="number">97K+</div>
+                        <div class="label">Lines of Code</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">131</div>
+                        <div class="label">Python Modules</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">128</div>
+                        <div class="label">Test Files</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">30+</div>
+                        <div class="label">Documentation Files</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <h2>✨ Key Features</h2>
+                
+                <h3>🧠 Revolutionary AI Learning System</h3>
+                <ul>
+                    <li><strong>Misconception Mining</strong> - AI learns from coding patterns and mistakes</li>
+                    <li><strong>Adaptive Learning Engine</strong> - Content dynamically adjusts to skill level</li>
+                    <li><strong>Interactive Learning Universe</strong> - 3D visualization of programming concepts</li>
+                    <li><strong>Progress Tracking</strong> - Evidence-based mastery assessment</li>
+                    <li><strong>Professional AI Tutor</strong> - Context-aware teaching with multiple modes</li>
+                    <li><strong>Message Traceability</strong> - Full lineage from code state to tutor intervention</li>
+                </ul>
+                
+                <h3>🔬 Advanced Analytics (Patent-Worthy)</h3>
+                <ul>
+                    <li><strong>Cognitive Pattern Recognition</strong> - Identifies thinking patterns and debugging strategies</li>
+                    <li><strong>Temporal Learning Dynamics</strong> - Time-based learning velocity tracking</li>
+                    <li><strong>Emotional Intelligence</strong> - Detects frustration, overwhelm, confidence levels</li>
+                    <li><strong>Predictive Mistake Prevention</strong> - Forecasts errors before they happen</li>
+                    <li><strong>Code Evolution Storytelling</strong> - Narrative arc of development progress</li>
+                </ul>
+                
+                <h3>💾 Enterprise Database System</h3>
+                <ul>
+                    <li><strong>Production SQLite</strong> - WAL mode with 36+ optimized indexes</li>
+                    <li><strong>Full Traceability</strong> - Code snapshot → error → observation → tutor message</li>
+                    <li><strong>GDPR Compliant</strong> - Profile isolation and privacy boundaries</li>
+                    <li><strong>Schema Versioning</strong> - Automatic migrations with rollback safety</li>
+                </ul>
+                
+                <h3>🛡️ Security & Privacy Suite</h3>
+                <ul>
+                    <li><strong>Secrets Scanner</strong> - Detects API keys, credentials, PII, credit cards</li>
+                    <li><strong>Vulnerability Detection</strong> - pip-audit integration for dependency scanning</li>
+                    <li><strong>License Compliance</strong> - OSS license checking and reporting</li>
+                    <li><strong>Privacy Controls</strong> - Local-only or cloud-assisted AI processing</li>
+                </ul>
+                
+                <h3>💻 Professional Development Environment</h3>
+                <ul>
+                    <li><strong>Advanced Code Analysis</strong> - Ruff linting, MyPy type checking, dead code detection</li>
+                    <li><strong>Unified Debugging</strong> - debugpy integration with educational overlays</li>
+                    <li><strong>Smart Project Management</strong> - File operations, search/replace, terminal integration</li>
+                    <li><strong>Modern UI/UX</strong> - PyQt6 with glass-morphism design and responsive layouts</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h2>🏗️ Architecture</h2>
+                <p><strong>Core Systems (58 modules):</strong></p>
+                <ul>
+                    <li>AI Engine (6 modules) - LLM orchestration, teaching, code analysis</li>
+                    <li>Learning Analytics (12 modules) - 8 advanced analysis systems</li>
+                    <li>Learning Platform (10 modules) - Storage, tracking, assessment</li>
+                    <li>Security Suite (5 modules) - Privacy, scanning, compliance</li>
+                    <li>System Core (5 modules) - Navigation, themes, execution, debugging</li>
+                </ul>
+                
+                <p><strong>UI Layer (73 modules):</strong></p>
+                <ul>
+                    <li>Screens (7) - Dashboard, IDE, Learning, Settings, Wizard</li>
+                    <li>Panels (20+) - Chat, Analysis, Security, Debugging, Tools</li>
+                    <li>Components (12) - Learning bubble web, navigation, project tree</li>
+                    <li>Widgets, Dialogs, Editors - Complete UI toolkit</li>
+                </ul>
+                
+                <p><strong>Tech Stack:</strong> Python 3.10+, PyQt6, SQLite, Ollama/OpenAI, Ruff, MyPy, debugpy</p>
+            </section>
+            
+            <section>
+                <h2>💼 Why Acquire Loom?</h2>
+                <ul>
+                    <li><strong>Time Savings:</strong> 18-24 months of development already completed</li>
+                    <li><strong>Unique IP:</strong> Patent-worthy learning analytics algorithms</li>
+                    <li><strong>Enterprise-Ready:</strong> Security, privacy, and compliance built-in</li>
+                    <li><strong>Complete Package:</strong> Full documentation, tests, handover support included</li>
+                    <li><strong>Strategic Value:</strong> Accelerate your EdTech or IDE roadmap immediately</li>
+                </ul>
+            </section>
+            
+            <section>
+                <h2>🎯 Ideal Buyers</h2>
+                <ul>
+                    <li><strong>EdTech Platforms</strong> - Codecademy, Coursera, freeCodeCamp, Udacity</li>
+                    <li><strong>IDE Companies</strong> - Replit, Cursor, JetBrains, Zed</li>
+                    <li><strong>Developer Tools</strong> - GitHub Education, GitLab, Atlassian</li>
+                    <li><strong>Enterprise Training</strong> - Pluralsight, LinkedIn Learning, O'Reilly</li>
+                </ul>
+            </section>
+            
+            <div class="cta">
+                <h2>📧 Interested in Acquiring Loom?</h2>
+                <p style="margin-bottom: 25px;">Schedule a demo or request detailed technical documentation</p>
+                <a href="mailto:loomide.acquisitions@gmail.com?subject=Loom%20IDE%20Acquisition%20Inquiry">Contact for Demo</a>
+                <a href="mailto:loomide.acquisitions@gmail.com?subject=Loom%20IDE%20Technical%20Details">Request Documentation</a>
+                <p style="margin-top: 25px; font-size: 0.9em; opacity: 0.9;">
+                    Asking Price: $700,000 (negotiable) | Full handover support included
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Loom IDE - AI-Powered Python Learning Platform</p>
+            <p style="font-size: 0.9em; margin-top: 10px;">Built with Python, PyQt6, and modern development practices</p>
+            <p style="font-size: 0.85em; margin-top: 15px; color: #999;">
+                This is a project acquisition listing. All code, documentation, and IP included.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
